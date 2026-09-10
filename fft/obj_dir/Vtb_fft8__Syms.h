@@ -4,24 +4,24 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef VERILATED_VTB_AXI_LITE_REGS__SYMS_H_
-#define VERILATED_VTB_AXI_LITE_REGS__SYMS_H_  // guard
+#ifndef VERILATED_VTB_FFT8__SYMS_H_
+#define VERILATED_VTB_FFT8__SYMS_H_  // guard
 
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 
 // INCLUDE MODEL CLASS
 
-#include "Vtb_axi_lite_regs.h"
+#include "Vtb_fft8.h"
 
 // INCLUDE MODULE CLASSES
-#include "Vtb_axi_lite_regs___024root.h"
+#include "Vtb_fft8___024root.h"
 
 // SYMS CLASS (contains all model state)
-class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs__Syms final : public VerilatedSyms {
+class alignas(VL_CACHE_LINE_BYTES) Vtb_fft8__Syms final : public VerilatedSyms {
   public:
     // INTERNAL STATE
-    Vtb_axi_lite_regs* const __Vm_modelp;
+    Vtb_fft8* const __Vm_modelp;
     bool __Vm_dumping = false;  // Dumping is active
     VerilatedMutex __Vm_dumperMutex;  // Protect __Vm_dumperp
     VerilatedVcdC* __Vm_dumperp VL_GUARDED_BY(__Vm_dumperMutex) = nullptr;  /// Trace class for $dump*
@@ -31,11 +31,11 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs__Syms final : public Verila
     bool& __Vm_didInit;
 
     // MODULE INSTANCE STATE
-    Vtb_axi_lite_regs___024root    TOP;
+    Vtb_fft8___024root             TOP;
 
     // CONSTRUCTORS
-    Vtb_axi_lite_regs__Syms(VerilatedContext* contextp, const char* namep, Vtb_axi_lite_regs* modelp);
-    ~Vtb_axi_lite_regs__Syms();
+    Vtb_fft8__Syms(VerilatedContext* contextp, const char* namep, Vtb_fft8* modelp);
+    ~Vtb_fft8__Syms();
 
     // METHODS
     const char* name() const { return TOP.vlNamep; }

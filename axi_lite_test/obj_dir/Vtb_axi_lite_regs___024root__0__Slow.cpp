@@ -232,6 +232,9 @@ VL_ATTR_COLD void Vtb_axi_lite_regs___024root___ctor_var_reset(Vtb_axi_lite_regs
     vlSelf->tb_axi_lite_regs__DOT__s_axi_rresp = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 3175561549635287939ull);
     vlSelf->tb_axi_lite_regs__DOT__s_axi_rvalid = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 416856244760513245ull);
     vlSelf->tb_axi_lite_regs__DOT__s_axi_rready = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6152969083872194369ull);
+    vlSelf->tb_axi_lite_regs__DOT__axi_write__Vstatic__addr = VL_SCOPED_RAND_RESET_I(6, __VscopeHash, 12991210229420976943ull);
+    vlSelf->tb_axi_lite_regs__DOT__axi_write__Vstatic__data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16266910812057809408ull);
+    vlSelf->tb_axi_lite_regs__DOT__axi_read__Vstatic__addr = VL_SCOPED_RAND_RESET_I(6, __VscopeHash, 6807857657465988818ull);
     vlSelf->tb_axi_lite_regs__DOT__dut__DOT__reg0 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6472916083551281826ull);
     vlSelf->tb_axi_lite_regs__DOT__dut__DOT__reg1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10790809124163280791ull);
     vlSelf->tb_axi_lite_regs__DOT__dut__DOT__reg2 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16220086189716601675ull);
@@ -331,4 +334,7 @@ VL_ATTR_COLD void Vtb_axi_lite_regs___024root___ctor_var_reset(Vtb_axi_lite_regs
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }
     vlSelf->__Vi = 0;
+    for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
+        vlSelf->__Vm_traceActivity[__Vi0] = 0;
+    }
 }

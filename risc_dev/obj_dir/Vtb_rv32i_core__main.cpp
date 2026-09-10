@@ -2,7 +2,7 @@
 // DESCRIPTION: Verilator output: main() simulation loop, created with --main
 
 #include "verilated.h"
-#include "Vtb_axi_lite_regs.h"
+#include "Vtb_rv32i_core.h"
 
 //======================
 
@@ -15,7 +15,7 @@ int main(int argc, char** argv, char**) {
     contextp->commandArgs(argc, argv);
 
     // Construct the Verilated model, from Vtop.h generated from Verilating
-    const std::unique_ptr<Vtb_axi_lite_regs> topp{new Vtb_axi_lite_regs{contextp.get(), ""}};
+    const std::unique_ptr<Vtb_rv32i_core> topp{new Vtb_rv32i_core{contextp.get(), ""}};
 
     // Simulate until $finish
     while (VL_LIKELY(!contextp->gotFinish())) {

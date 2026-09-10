@@ -34,6 +34,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs___024root final {
         CData/*1:0*/ tb_axi_lite_regs__DOT__s_axi_rresp;
         CData/*0:0*/ tb_axi_lite_regs__DOT__s_axi_rvalid;
         CData/*0:0*/ tb_axi_lite_regs__DOT__s_axi_rready;
+        CData/*5:0*/ tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
+        CData/*5:0*/ tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
         CData/*5:0*/ tb_axi_lite_regs__DOT__dut__DOT__awaddr_reg;
         CData/*0:0*/ tb_axi_lite_regs__DOT__dut__DOT__awaddr_valid;
         CData/*3:0*/ tb_axi_lite_regs__DOT__dut__DOT__wstrb_reg;
@@ -79,10 +81,10 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs___024root final {
         CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v5;
         CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v5;
         CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v4;
-        CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v5;
-        CData/*5:0*/ __VdlyVal__tb_axi_lite_regs__DOT__s_axi_araddr__v2;
     };
     struct {
+        CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v5;
+        CData/*5:0*/ __VdlyVal__tb_axi_lite_regs__DOT__s_axi_araddr__v2;
         CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_araddr__v2;
         CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v4;
         CData/*0:0*/ __VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v5;
@@ -112,6 +114,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs___024root final {
         CData/*0:0*/ __Vtrigprevexpr___TOP__tb_axi_lite_regs__DOT__s_axi_wready__0;
         IData/*31:0*/ tb_axi_lite_regs__DOT__s_axi_wdata;
         IData/*31:0*/ tb_axi_lite_regs__DOT__s_axi_rdata;
+        IData/*31:0*/ tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
         IData/*31:0*/ tb_axi_lite_regs__DOT__axi_read__Vstatic__data;
         IData/*31:0*/ tb_axi_lite_regs__DOT__dut__DOT__reg0;
         IData/*31:0*/ tb_axi_lite_regs__DOT__dut__DOT__reg1;
@@ -128,6 +131,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs___024root final {
         VlUnpacked<QData/*63:0*/, 1> __VactTriggered;
         VlUnpacked<QData/*63:0*/, 1> __VactTriggeredAcc;
         VlUnpacked<QData/*63:0*/, 1> __VnbaTriggered;
+        VlUnpacked<CData/*0:0*/, 5> __Vm_traceActivity;
     };
     VlDelayScheduler __VdlySched;
     VlTriggerScheduler __VtrigSched_h06e01d25__0;

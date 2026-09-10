@@ -1,9 +1,9 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Symbol table implementation internals
 
-#include "Vtb_axi_lite_regs__pch.h"
+#include "Vtb_fft8__pch.h"
 
-Vtb_axi_lite_regs__Syms::Vtb_axi_lite_regs__Syms(VerilatedContext* contextp, const char* namep, Vtb_axi_lite_regs* modelp)
+Vtb_fft8__Syms::Vtb_fft8__Syms(VerilatedContext* contextp, const char* namep, Vtb_fft8* modelp)
     : VerilatedSyms{contextp}
     // Setup internal state of the Syms class
     , __Vm_modelp{modelp}
@@ -12,7 +12,7 @@ Vtb_axi_lite_regs__Syms::Vtb_axi_lite_regs__Syms(VerilatedContext* contextp, con
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(685);
+    Verilated::stackCheck(430);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
@@ -22,18 +22,18 @@ Vtb_axi_lite_regs__Syms::Vtb_axi_lite_regs__Syms(VerilatedContext* contextp, con
     TOP.__Vconfigure(true);
 }
 
-Vtb_axi_lite_regs__Syms::~Vtb_axi_lite_regs__Syms() {
+Vtb_fft8__Syms::~Vtb_fft8__Syms() {
     if (__Vm_dumping) _traceDumpClose();
     // Tear down scopes
     // Tear down sub module instances
 }
 
-void Vtb_axi_lite_regs__Syms::_traceDump() {
+void Vtb_fft8__Syms::_traceDump() {
     const VerilatedLockGuard lock{__Vm_dumperMutex};
     __Vm_dumperp->dump(VL_TIME_Q());
 }
 
-void Vtb_axi_lite_regs__Syms::_traceDumpOpen() {
+void Vtb_fft8__Syms::_traceDumpOpen() {
     const VerilatedLockGuard lock{__Vm_dumperMutex};
     if (VL_UNLIKELY(!__Vm_dumperp)) {
         __Vm_dumperp = new VerilatedVcdC();
@@ -44,7 +44,7 @@ void Vtb_axi_lite_regs__Syms::_traceDumpOpen() {
     }
 }
 
-void Vtb_axi_lite_regs__Syms::_traceDumpClose() {
+void Vtb_fft8__Syms::_traceDumpClose() {
     const VerilatedLockGuard lock{__Vm_dumperMutex};
     __Vm_dumping = false;
     VL_DO_CLEAR(delete __Vm_dumperp, __Vm_dumperp = nullptr);

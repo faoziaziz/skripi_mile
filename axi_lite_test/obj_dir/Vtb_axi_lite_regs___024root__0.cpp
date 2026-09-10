@@ -15,8 +15,9 @@ void Vtb_axi_lite_regs___024root___eval_initial(Vtb_axi_lite_regs___024root* vlS
     {
         // Inlined CFunc: _eval_initial__TOP
         vlSymsp->_vm_contextp__->dumpfile("axi_lite_regs.vcd"s);
-        VL_PRINTF_MT("-Info: tb_axi_lite_regs.v:278: $dumpvar ignored, as Verilated without --trace\n");
+        vlSymsp->_traceDumpOpen();
     }
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
     Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__0(vlSelf);
     Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(vlSelf);
 }
@@ -144,9 +145,11 @@ bool Vtb_axi_lite_regs___024root___eval_nba(Vtb_axi_lite_regs___024root* vlSelf)
             // Inlined CFunc: _eval_body__nba
             if ((1ULL & vlSelfRef.__VnbaTriggered[0U])) {
                 Vtb_axi_lite_regs___024root___nba_sequent__TOP__0(vlSelf);
+                vlSelfRef.__Vm_traceActivity[3U] = 1U;
             }
             if ((0x000000000000003fULL & vlSelfRef.__VnbaTriggered[0U])) {
                 Vtb_axi_lite_regs___024root___nba_sequent__TOP__1(vlSelf);
+                vlSelfRef.__Vm_traceActivity[4U] = 1U;
             }
         }
         Vtb_axi_lite_regs___024root___trigger_clear__act(vlSelfRef.__VnbaTriggered);
@@ -205,12 +208,6 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
     Vtb_axi_lite_regs__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Locals
-    CData/*5:0*/ tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__addr = 0;
-    IData/*31:0*/ tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__data = 0;
-    CData/*5:0*/ tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
-    tb_axi_lite_regs__DOT__axi_read__Vstatic__addr = 0;
     IData/*31:0*/ tb_axi_lite_regs__DOT__unnamedblk1_1__DOT____Vrepeat0;
     tb_axi_lite_regs__DOT__unnamedblk1_1__DOT____Vrepeat0 = 0;
     IData/*31:0*/ tb_axi_lite_regs__DOT__unnamedblk1_2__DOT____Vrepeat1;
@@ -260,6 +257,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@(posedge tb_axi_lite_regs.aclk)", 
                                                              "tb_axi_lite_regs.v", 
                                                              217);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
         tb_axi_lite_regs__DOT__unnamedblk1_1__DOT____Vrepeat0 
             = (tb_axi_lite_regs__DOT__unnamedblk1_1__DOT____Vrepeat0 
                - (IData)(1U));
@@ -268,13 +266,13 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
     VL_WRITEF_NX("RESET RELEASED\n",0);
     __Vtask_tb_axi_lite_regs__DOT__axi_write__0__data = 0x12345678U;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__0__addr = 0U;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__0__addr;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__0__data;
     VL_WRITEF_NX("\n======================================\nAXI WRITE\nADDR = 0x%08h\nDATA = 0x%08h\n======================================\n",2
-                 , '#',6,tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
-                 , '#',32,tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
+                 , '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -282,12 +280,13 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          94);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_awaddr__v0 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awaddr__v0 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v0 = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_wdata__v0 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wdata__v0 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wstrb__v0 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v0 = 1U;
@@ -299,6 +298,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_awready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              105);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -307,6 +307,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          107);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v1 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_wready)))) {
         Vtb_axi_lite_regs___024root____VbeforeTrig_h7e7bb800__0(vlSelf, 
@@ -316,6 +317,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_wready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              112);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -324,6 +326,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          114);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v1 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v0 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bvalid)))) {
@@ -334,6 +337,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_bvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              121);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -342,9 +346,10 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          123);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v1 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_read__1__addr = 0U;
-    tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_read__1__addr;
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp))) {
         VL_WRITEF_NX("WRITE RESPONSE: OKAY\n",0);
@@ -353,7 +358,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                      , '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp);
     }
     VL_WRITEF_NX("\n======================================\nAXI READ\nADDR = 0x%08h\n======================================\n",1
-                 , '#',6,tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -361,8 +366,9 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          154);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_araddr__v0 
-        = tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_araddr__v0 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v0 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_arready)))) {
@@ -373,6 +379,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_arready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              159);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -381,6 +388,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          161);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v1 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v0 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rvalid)))) {
@@ -391,6 +399,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_rvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              167);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data 
         = vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rdata;
@@ -401,13 +410,14 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          171);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("READ DATA = 0x%08h\n",1, '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data);
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v1 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__2__data = 0xdeadbeefU;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__2__addr = 4U;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__2__addr;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__2__data;
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp))) {
         VL_WRITEF_NX("READ RESPONSE: OKAY\n",0);
@@ -415,8 +425,8 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
         VL_WRITEF_NX("READ RESPONSE ERROR: %b\n",1, '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp);
     }
     VL_WRITEF_NX("\n======================================\nAXI WRITE\nADDR = 0x%08h\nDATA = 0x%08h\n======================================\n",2
-                 , '#',6,tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
-                 , '#',32,tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
+                 , '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -424,12 +434,13 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          94);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_awaddr__v1 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awaddr__v1 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v2 = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_wdata__v1 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wdata__v1 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wstrb__v1 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v2 = 1U;
@@ -441,6 +452,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_awready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              105);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -449,6 +461,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          107);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v3 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_wready)))) {
         Vtb_axi_lite_regs___024root____VbeforeTrig_h7e7bb800__0(vlSelf, 
@@ -458,6 +471,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_wready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              112);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -466,6 +480,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          114);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v3 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v2 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bvalid)))) {
@@ -476,6 +491,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_bvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              121);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -484,9 +500,10 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          123);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v3 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_read__3__addr = 4U;
-    tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_read__3__addr;
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp))) {
         VL_WRITEF_NX("WRITE RESPONSE: OKAY\n",0);
@@ -495,7 +512,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                      , '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp);
     }
     VL_WRITEF_NX("\n======================================\nAXI READ\nADDR = 0x%08h\n======================================\n",1
-                 , '#',6,tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -503,8 +520,9 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          154);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_araddr__v1 
-        = tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_araddr__v1 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v2 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_arready)))) {
@@ -515,6 +533,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_arready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              159);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -523,6 +542,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          161);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v3 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v2 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rvalid)))) {
@@ -533,6 +553,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_rvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              167);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data 
         = vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rdata;
@@ -543,13 +564,14 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          171);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("READ DATA = 0x%08h\n",1, '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data);
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v3 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__4__data = 0xcafebabeU;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__4__addr = 8U;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__4__addr;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__4__data;
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp))) {
         VL_WRITEF_NX("READ RESPONSE: OKAY\n",0);
@@ -557,8 +579,8 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
         VL_WRITEF_NX("READ RESPONSE ERROR: %b\n",1, '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp);
     }
     VL_WRITEF_NX("\n======================================\nAXI WRITE\nADDR = 0x%08h\nDATA = 0x%08h\n======================================\n",2
-                 , '#',6,tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
-                 , '#',32,tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
+                 , '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -566,12 +588,13 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          94);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_awaddr__v2 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awaddr__v2 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v4 = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_wdata__v2 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wdata__v2 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wstrb__v2 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v4 = 1U;
@@ -583,6 +606,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_awready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              105);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -591,6 +615,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          107);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v5 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_wready)))) {
         Vtb_axi_lite_regs___024root____VbeforeTrig_h7e7bb800__0(vlSelf, 
@@ -600,6 +625,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_wready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              112);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -608,6 +634,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          114);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v5 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v4 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bvalid)))) {
@@ -618,6 +645,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_bvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              121);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -626,9 +654,10 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          123);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v5 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_read__5__addr = 8U;
-    tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_read__5__addr;
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp))) {
         VL_WRITEF_NX("WRITE RESPONSE: OKAY\n",0);
@@ -637,7 +666,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                      , '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp);
     }
     VL_WRITEF_NX("\n======================================\nAXI READ\nADDR = 0x%08h\n======================================\n",1
-                 , '#',6,tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -645,8 +674,9 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          154);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_araddr__v2 
-        = tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_araddr__v2 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v4 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_arready)))) {
@@ -657,6 +687,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_arready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              159);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -665,6 +696,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          161);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v5 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v4 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rvalid)))) {
@@ -675,6 +707,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_rvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              167);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data 
         = vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rdata;
@@ -685,13 +718,14 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          171);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("READ DATA = 0x%08h\n",1, '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data);
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v5 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__6__data = 0xa5a5a5a5U;
     __Vtask_tb_axi_lite_regs__DOT__axi_write__6__addr = 0x0cU;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__6__addr;
-    tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data 
         = __Vtask_tb_axi_lite_regs__DOT__axi_write__6__data;
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp))) {
         VL_WRITEF_NX("READ RESPONSE: OKAY\n",0);
@@ -699,8 +733,8 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
         VL_WRITEF_NX("READ RESPONSE ERROR: %b\n",1, '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp);
     }
     VL_WRITEF_NX("\n======================================\nAXI WRITE\nADDR = 0x%08h\nDATA = 0x%08h\n======================================\n",2
-                 , '#',6,tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
-                 , '#',32,tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr
+                 , '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -708,12 +742,13 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          94);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_awaddr__v3 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awaddr__v3 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v6 = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_wdata__v3 
-        = tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_write__Vstatic__data;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wdata__v3 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wstrb__v3 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v6 = 1U;
@@ -725,6 +760,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_awready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              105);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -733,6 +769,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          107);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_awvalid__v7 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_wready)))) {
         Vtb_axi_lite_regs___024root____VbeforeTrig_h7e7bb800__0(vlSelf, 
@@ -742,6 +779,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_wready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              112);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -750,6 +788,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          114);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_wvalid__v7 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v6 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bvalid)))) {
@@ -760,6 +799,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_bvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              121);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -774,12 +814,13 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
         VL_WRITEF_NX("WRITE RESPONSE ERROR: %b\n",1
                      , '#',2,vlSelfRef.tb_axi_lite_regs__DOT__s_axi_bresp);
     }
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_bready__v7 = 1U;
     __Vtask_tb_axi_lite_regs__DOT__axi_read__7__addr = 0x0cU;
-    tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
+    vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr 
         = __Vtask_tb_axi_lite_regs__DOT__axi_read__7__addr;
     VL_WRITEF_NX("\n======================================\nAXI READ\nADDR = 0x%08h\n======================================\n",1
-                 , '#',6,tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
+                 , '#',6,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr);
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
     co_await vlSelfRef.__VtrigSched_h06e01d25__0.trigger(0U, 
@@ -787,8 +828,9 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          154);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlyVal__tb_axi_lite_regs__DOT__s_axi_araddr__v3 
-        = tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
+        = vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__addr;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_araddr__v3 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v6 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_arready)))) {
@@ -799,6 +841,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_arready)", 
                                                              "tb_axi_lite_regs.v", 
                                                              159);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     Vtb_axi_lite_regs___024root____VbeforeTrig_h06e01d25__0(vlSelf, 
                                                             "@(posedge tb_axi_lite_regs.aclk)");
@@ -807,6 +850,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          161);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_arvalid__v7 = 1U;
     vlSelfRef.__VdlySet__tb_axi_lite_regs__DOT__s_axi_rready__v6 = 1U;
     while ((1U & (~ (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rvalid)))) {
@@ -817,6 +861,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@( tb_axi_lite_regs.s_axi_rvalid)", 
                                                              "tb_axi_lite_regs.v", 
                                                              167);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data 
         = vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rdata;
@@ -827,6 +872,7 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                          "@(posedge tb_axi_lite_regs.aclk)", 
                                                          "tb_axi_lite_regs.v", 
                                                          171);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("READ DATA = 0x%08h\n",1, '#',32,vlSelfRef.tb_axi_lite_regs__DOT__axi_read__Vstatic__data);
     if ((0U == (IData)(vlSelfRef.tb_axi_lite_regs__DOT__s_axi_rresp))) {
         VL_WRITEF_NX("READ RESPONSE: OKAY\n",0);
@@ -843,12 +889,14 @@ VlCoroutine Vtb_axi_lite_regs___024root___eval_initial__TOP__Vtiming__1(Vtb_axi_
                                                              "@(posedge tb_axi_lite_regs.aclk)", 
                                                              "tb_axi_lite_regs.v", 
                                                              260);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
         tb_axi_lite_regs__DOT__unnamedblk1_2__DOT____Vrepeat1 
             = (tb_axi_lite_regs__DOT__unnamedblk1_2__DOT____Vrepeat1 
                - (IData)(1U));
     }
     VL_WRITEF_NX("\n######################################\n# TEST FINISHED\n######################################\n",0);
     VL_FINISH_MT("tb_axi_lite_regs.v", 267, "");
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_return;
 }
 

@@ -2,7 +2,7 @@
 # DESCRIPTION: Verilator output: Make include file with class lists
 #
 # This file lists generated Verilated files, for including in higher level makefiles.
-# See Vtb_axi_lite_regs.mk for the caller.
+# See Vtb_rv32i_core.mk for the caller.
 
 ### Switches...
 # C11 constructs required?  0/1 (always on now)
@@ -27,24 +27,25 @@ VM_VPI = 0
 ### Object file lists...
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
-  Vtb_axi_lite_regs \
-  Vtb_axi_lite_regs___024root__0 \
-  Vtb_axi_lite_regs__main \
+  Vtb_rv32i_core \
+  Vtb_rv32i_core___024root__0 \
+  Vtb_rv32i_core__main \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
-  Vtb_axi_lite_regs___024root__Slow \
-  Vtb_axi_lite_regs___024root__0__Slow \
+  Vtb_rv32i_core__ConstPool__0__Slow \
+  Vtb_rv32i_core___024root__Slow \
+  Vtb_rv32i_core___024root__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
-  Vtb_axi_lite_regs__Trace__0 \
+  Vtb_rv32i_core__Trace__0 \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
 VM_SUPPORT_SLOW += \
-  Vtb_axi_lite_regs__Syms__Slow \
-  Vtb_axi_lite_regs__Trace__0__Slow \
-  Vtb_axi_lite_regs__TraceDecls__0__Slow \
+  Vtb_rv32i_core__Syms__Slow \
+  Vtb_rv32i_core__Trace__0__Slow \
+  Vtb_rv32i_core__TraceDecls__0__Slow \
 
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \

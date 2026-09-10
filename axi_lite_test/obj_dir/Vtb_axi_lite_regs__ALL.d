@@ -5,11 +5,14 @@ Vtb_axi_lite_regs__ALL.o: Vtb_axi_lite_regs__ALL.cpp \
  /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilatedos.h \
  /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated_types.h \
  /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated_funcs.h \
- Vtb_axi_lite_regs__Syms.h Vtb_axi_lite_regs.h \
- Vtb_axi_lite_regs___024root.h \
- /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated_timing.h \
+ Vtb_axi_lite_regs__Syms.h \
+ /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated_vcd_c.h \
  /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated.h \
+ /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated_trace.h \
+ Vtb_axi_lite_regs.h Vtb_axi_lite_regs___024root.h \
+ /home/aziz-faozi/installer/oss-cad-suite/share/verilator/include/verilated_timing.h \
  Vtb_axi_lite_regs___024root__0.cpp Vtb_axi_lite_regs__main.cpp \
- Vtb_axi_lite_regs___024root__Slow.cpp \
+ Vtb_axi_lite_regs__Trace__0.cpp Vtb_axi_lite_regs___024root__Slow.cpp \
  Vtb_axi_lite_regs___024root__0__Slow.cpp \
- Vtb_axi_lite_regs__Syms__Slow.cpp
+ Vtb_axi_lite_regs__Syms__Slow.cpp Vtb_axi_lite_regs__Trace__0__Slow.cpp \
+ Vtb_axi_lite_regs__TraceDecls__0__Slow.cpp

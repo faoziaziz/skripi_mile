@@ -5,21 +5,21 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef VERILATED_VTB_AXI_LITE_REGS_H_
-#define VERILATED_VTB_AXI_LITE_REGS_H_  // guard
+#ifndef VERILATED_VTB_FFT8_H_
+#define VERILATED_VTB_FFT8_H_  // guard
 
 #include "verilated.h"
 
-class Vtb_axi_lite_regs__Syms;
-class Vtb_axi_lite_regs___024root;
+class Vtb_fft8__Syms;
+class Vtb_fft8___024root;
 class VerilatedVcdC;
 
 // This class is the main interface to the Verilated model
-class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs VL_NOT_FINAL : public VerilatedModel {
-    friend class Vtb_axi_lite_regs__Syms;
+class alignas(VL_CACHE_LINE_BYTES) Vtb_fft8 VL_NOT_FINAL : public VerilatedModel {
+    friend class Vtb_fft8__Syms;
   private:
     // Symbol table holding complete model state (owned by this class)
-    Vtb_axi_lite_regs__Syms* const vlSymsp;
+    Vtb_fft8__Syms* const vlSymsp;
     // Evaluation loop
     VerilatedEvalLoop m_evalLoop;
 
@@ -39,19 +39,19 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_axi_lite_regs VL_NOT_FINAL : public Veril
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.
-    Vtb_axi_lite_regs___024root* const rootp;
+    Vtb_fft8___024root* const rootp;
 
     // CONSTRUCTORS
     /// Construct the model; called by application code
     /// If contextp is null, then the model will use the default global context
     /// If name is "", then makes a wrapper with a
     /// single model invisible with respect to DPI scope names.
-    explicit Vtb_axi_lite_regs(VerilatedContext* contextp, const char* name = "TOP");
-    explicit Vtb_axi_lite_regs(const char* name = "TOP");
+    explicit Vtb_fft8(VerilatedContext* contextp, const char* name = "TOP");
+    explicit Vtb_fft8(const char* name = "TOP");
     /// Destroy the model; called (often implicitly) by application code
-    virtual ~Vtb_axi_lite_regs();
+    virtual ~Vtb_fft8();
   private:
-    VL_UNCOPYABLE(Vtb_axi_lite_regs);  ///< Copying not allowed
+    VL_UNCOPYABLE(Vtb_fft8);  ///< Copying not allowed
 
   public:
     // API METHODS
